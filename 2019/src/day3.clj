@@ -89,8 +89,9 @@
 
 (defn part2 [input]
   (let [[wire1 wire2] (map draw input)
-        intersections (remove #{[0 0]}
-                              (clojure.set/intersection (set wire1) (set wire2)))]
+        intersections
+        (remove #{[0 0]}
+                (clojure.set/intersection (set wire1) (set wire2)))]
     (->> (map (fn [intercetion]
                 ( + (calc-dis intercetion wire1)
                     (calc-dis intercetion wire2))) intersections)
