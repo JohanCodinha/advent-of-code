@@ -21,7 +21,7 @@
 (defn required-fuel [mass]
   (-> mass
       (/ 3)
-      Math/floor
+      Math/floo
       (- 2)
       int))
 
